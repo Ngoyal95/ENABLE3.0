@@ -1,3 +1,6 @@
+"""
+route.py is used to connect the page requests with their proper html files
+"""
 from flask import render_template
 from app import app
 from app.forms import LoginForm
