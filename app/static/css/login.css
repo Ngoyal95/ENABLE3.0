@@ -60,6 +60,10 @@
 .form .register-form {
   display: none;
 }
+.error {
+  color: red;
+  font-size: .8em;
+}
 .container {
   position: relative;
   z-index: 1;

@@ -19,17 +19,17 @@
             <h1 class="login-title">ENABLE 3.0</h1>
             <div class="form">
                 <form action="" method="post" novalidate>
-                    {{ form.hidden_tag() }}
-
+                    {{ form.hidden_tag() }} <!-- needed for CSRF attack prevention -->
+                    
                     {{ form.username(placeholder="username") }}
                     {% for error in form.username.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
+                    <span class="error" style="color: red;">[{{ "username is required" }}]</span>
                     {% endfor %}
                     <br>
 
                     {{ form.password(placeholder="password") }}
                     {% for error in form.password.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
+                    <span class="error" style="color: red;">[{{ "password is required" }}]</span>
                     {% endfor %}
                     <br>
 

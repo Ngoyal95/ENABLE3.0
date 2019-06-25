@@ -1,0 +1,107 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "NavBar UI UI UI UI" "NavBar UI UI UI UI" "NavBar UI UI UI UI" "NavBar UI UI UI UI";
+}
+
+/* .NavBar { 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "." "." "." "." "." "." "." ".";
+    grid-area: NavBar;
+
+    position: left;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+} */
+
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .active {
+    background-color: rgb(98, 161, 126);
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+
+.NavBar {
+    font-family: "Roboto", sans-serif;
+    font-size: 45px;
+    max-width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    /* background: rgb(87, 96, 99); */
+    overflow-x: hidden;
+    padding: 8px 0;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+}
+
+.NavBar a {
+    font-family: "Roboto", sans-serif;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+
+.NavBar a:hover {
+    color: #064579;
+}
+
+.UI {
+    grid-area: UI;
+    align-items: stretch;
+    font-family: "Roboto", sans-serif;
+    background: rgb(87, 96, 99);
+    font-size: 28px; /* Increased text to enable scrolling */
+    margin-left: 425px;
+    padding: 0px 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+  
+
+body {
+    background:  #2db8b1; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #2db8b1, #8DC26F);
+    background: -moz-linear-gradient(right, #2db8b1, #8DC26F);
+    background: -o-linear-gradient(right, #2db8b1, #8DC26F);
+    background: linear-gradient(to left, #2db8b1, #8DC26F);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+  }

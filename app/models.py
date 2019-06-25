@@ -12,4 +12,3 @@ class User(db.Model):
     def __repr__(self):
         """ Tells Python how to print objects of this class (used for debugging) """
         return '<User {}>'.format(self.username)
-    

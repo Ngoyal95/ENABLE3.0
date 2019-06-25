@@ -3,9 +3,9 @@
   <html lang="en">
       <head>
           <title>ENABLE 3.0</title>
-          <link rel="stylesheet" href="{{ url_for('static',     filename='css/login.css') }}"/>
+          <link rel="stylesheet" href="{{ url_for('static',     filename='css/home.css') }}"/>
           <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-          
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <!-- Required meta tags -->
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,10 @@
       </head>
 
     <body>
-        {% block content %}{% endblock %}
+        <div class="navbar">
+            <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+            <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+            <a href="#"><i class="fa fa-fw fa-user"></i> Logoff</a>
+        </div>
     </body>
 </html>
