@@ -1,9 +1,9 @@
-.grid-container {
+/* .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: "NavBar UI UI UI UI" "NavBar UI UI UI UI" "NavBar UI UI UI UI" "NavBar UI UI UI UI";
-}
+} */
 
 /* .NavBar { 
     display: grid;
