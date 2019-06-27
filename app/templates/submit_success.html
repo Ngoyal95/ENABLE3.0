@@ -15,32 +15,11 @@
     </head>
 
     <body>
-        <p class="form-title">Welcome to ENABLE 3.0</p>
-        <div class="form-box">
-            <div class="form">
-                <img class="enable_img" src="/static/images/enable_icon.png" alt="enable_icon" style="width:128px;height:128px;">
-                <!-- <h1 class="login-title">ENABLE 3.0</h1> -->
-                <form action="" method="post" novalidate>
-                    {{ form.hidden_tag() }} <!-- needed for CSRF attack prevention -->
-                    
-                    {{ form.username(placeholder="username") }}
-                    {% for error in form.username.errors %}
-                    <span class="error" style="color: red;">[{{ "username is required" }}]</span>
-                    {% endfor %}
-                    <br>
+        <p class="form-title">Message Submitted!.</p>
 
-                    {{ form.password(placeholder="password") }}
-                    {% for error in form.password.errors %}
-                    <span class="error" style="color: red;">[{{ "password is required" }}]</span>
-                    {% endfor %}
-                    <br>
+        <p class="form-title">Redirecting you <span id="countdown2">in <span id="countdown">3</span> seconds</span>.</p>
 
-                    {{ form.submit() }}
-                    <p class="message">Need Help? Contact <a href="{{ url_for('help') }}">here</a>.<br/></p>
-                </form>
-            </div>
-        </div>
-        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -48,5 +27,5 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 
-    <script src="{{ url_for('static',     filename='js/login.js') }}"></script>
+    <script src="{{ url_for('static',     filename='js/submit_success.js') }}"></script>
 </html>

@@ -15,32 +15,47 @@
     </head>
 
     <body>
-        <p class="form-title">Welcome to ENABLE 3.0</p>
         <div class="form-box">
+            <p class="form-title">Please fill out the following form and we will contact you.</p>
             <div class="form">
-                <img class="enable_img" src="/static/images/enable_icon.png" alt="enable_icon" style="width:128px;height:128px;">
-                <!-- <h1 class="login-title">ENABLE 3.0</h1> -->
                 <form action="" method="post" novalidate>
                     {{ form.hidden_tag() }} <!-- needed for CSRF attack prevention -->
                     
-                    {{ form.username(placeholder="username") }}
-                    {% for error in form.username.errors %}
-                    <span class="error" style="color: red;">[{{ "username is required" }}]</span>
+                    {{ form.firstname(placeholder="first name") }}
+                    {% for error in form.firstname.errors %}
+                    <span class="error" style="color: red;">[{{ "first name required" }}]</span>
                     {% endfor %}
                     <br>
 
-                    {{ form.password(placeholder="password") }}
-                    {% for error in form.password.errors %}
-                    <span class="error" style="color: red;">[{{ "password is required" }}]</span>
+                    {{ form.lastname(placeholder="last name") }}
+                    {% for error in form.lastname.errors %}
+                    <span class="error" style="color: red;">[{{ "last name required" }}]</span>
+                    {% endfor %}
+                    <br>
+
+                    {{ form.email(placeholder="email") }}
+                    {% for error in form.email.errors %}
+                    <span class="error" style="color: red;">[{{ "email required" }}]</span>
+                    {% endfor %}
+                    <br>
+
+                    {{ form.subject(placeholder="subject") }}
+                    {% for error in form.subject.errors %}
+                    <span class="error" style="color: red;">[{{ "subject required" }}]</span>
+                    {% endfor %}
+                    <br>
+
+                    {{ form.message(placeholder="type your message here") }}
+                    {% for error in form.message.errors %}
+                    <span class="error" style="color: red;">[{{ "message required" }}]</span>
                     {% endfor %}
                     <br>
 
                     {{ form.submit() }}
-                    <p class="message">Need Help? Contact <a href="{{ url_for('help') }}">here</a>.<br/></p>
-                </form>
+                <p class="message">Return to <a href="{{ url_for('login') }}">Login</a>.<br/></p>
             </div>
         </div>
-        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
