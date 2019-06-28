@@ -29,3 +29,19 @@ def help():
 @app.route('/submit_success')
 def submit_success():
     return render_template('submit_success.html')
+
+@app.route('/data_viewer')
+def data_viewer():
+    return render_template('data_viewer.html')
+
+@app.route('/upload')
+def upload():
+    return render_template('upload.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
+@app.route('/plotter')
+def plotter():
+    return render_template('plotter.html')
