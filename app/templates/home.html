@@ -1,24 +1,12 @@
-<!doctype html>
-
-  <html lang="en">
-      <head>
-          <title>ENABLE 3.0</title>
-          <link rel="stylesheet" href="{{ url_for('static',     filename='css/styles.css') }}"/>
-          <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <!-- Required meta tags -->
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-          <!-- Bootstrap CSS -->
-          <!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-      </head>
-
-    <body>
-        <div class="navbar">
-            <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
-            <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
-            <a href="#"><i class="fa fa-fw fa-user"></i> Logoff</a>
-        </div>
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block title %}Help{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+        <a href="#"><i class="fa fa-fw fa-user"></i> Logoff</a>
+    </div>
+{% endblock %}

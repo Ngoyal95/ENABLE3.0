@@ -1,52 +1,32 @@
-<!doctype html>
+{% extends "layout.html" %}
+{% block title %}Help{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+    <p class="form-title">Welcome to ENABLE 3.0</p>
+    <div class="form-box">
+        <div class="form">
+            <img class="enable_img" src="/static/images/enable_icon.png" alt="enable_icon" style="width:128px;height:128px;">
+            <!-- <h1 class="login-title">ENABLE 3.0</h1> -->
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }} <!-- needed for CSRF attack prevention -->
+                
+                {{ form.username(placeholder="username") }}
+                {% for error in form.username.errors %}
+                <span class="error" style="color: red;">[{{ "username is required" }}]</span>
+                {% endfor %}
+                <br>
 
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                {{ form.password(placeholder="password") }}
+                {% for error in form.password.errors %}
+                <span class="error" style="color: red;">[{{ "password is required" }}]</span>
+                {% endfor %}
+                <br>
 
-        <title>ENABLE 3.0</title>
-        <link rel="stylesheet" href="{{ url_for('static',     filename='css/styles.css') }}"/>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-        
-        <!-- Bootstrap CSS -->
-        <!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    </head>
-
-    <body>
-        <p class="form-title">Welcome to ENABLE 3.0</p>
-        <div class="form-box">
-            <div class="form">
-                <img class="enable_img" src="/static/images/enable_icon.png" alt="enable_icon" style="width:128px;height:128px;">
-                <!-- <h1 class="login-title">ENABLE 3.0</h1> -->
-                <form action="" method="post" novalidate>
-                    {{ form.hidden_tag() }} <!-- needed for CSRF attack prevention -->
-                    
-                    {{ form.username(placeholder="username") }}
-                    {% for error in form.username.errors %}
-                    <span class="error" style="color: red;">[{{ "username is required" }}]</span>
-                    {% endfor %}
-                    <br>
-
-                    {{ form.password(placeholder="password") }}
-                    {% for error in form.password.errors %}
-                    <span class="error" style="color: red;">[{{ "password is required" }}]</span>
-                    {% endfor %}
-                    <br>
-
-                    {{ form.submit() }}
-                    <p class="message">Need Help? Contact <a href="{{ url_for('help') }}">here</a>.<br/></p>
-                </form>
-            </div>
+                {{ form.submit() }}
+                <p class="message">Need Help? Contact <a href="{{ url_for('help') }}">here</a>.<br/></p>
+            </form>
         </div>
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
-
-    <script src="{{ url_for('static',     filename='js/login.js') }}"></script>
-</html>
+    </div>
+{% endblock %}
