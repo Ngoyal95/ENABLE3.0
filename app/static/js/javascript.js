@@ -52,4 +52,5 @@ $(function() {
 });
 
 // Show active page on navbar
+// https://stackoverflow.com/questions/15082316/how-to-set-active-class-to-nav-menu-from-twitter-bootstrap
 $('a[href="' + this.location.pathname + '"]').parents('li,ul').addClass('active');
